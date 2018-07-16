@@ -1,0 +1,18 @@
+---
+applications:
+- name: my-pws-nightscout
+  memory: 256M
+  disk_quota: 256M
+  instances: 1
+  env:
+    MONGO_CONNECTION: mLab-uri
+    DISPLAY_UNITS: mg/dl
+    API_SECRET: replaceMe-with-a-secret
+    ENABLE: bridge pushover cage rawbg careportal
+    BRIDGE_USER_NAME: dexcom-share-username
+    BRIDGE_PASSWORD: dexcom-share-password
+    BRIDGE_INTERVAL: 150000
+    BG_HIGH: 180
+    BG_LOW: 80
+  services:
+    - name-of-mLab-service-instance
